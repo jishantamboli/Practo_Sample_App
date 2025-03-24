@@ -1,7 +1,9 @@
 import 'package:fadfocus_assignment/components/symptoms_grid.dart';
 import 'package:fadfocus_assignment/constants/app_colors.dart';
 import 'package:fadfocus_assignment/constants/app_textstyles.dart';
+import 'package:fadfocus_assignment/screens/book_appointment/book_appointment_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class BookAppointmentView extends StatefulWidget {
   const BookAppointmentView({super.key});
@@ -13,6 +15,7 @@ class BookAppointmentView extends StatefulWidget {
 class _BookAppointmentViewState extends State<BookAppointmentView> {
   @override
   Widget build(BuildContext context) {
+    final viewModel = Provider.of<BookAppointmentViewmodel>(context);
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -83,7 +86,13 @@ class _BookAppointmentViewState extends State<BookAppointmentView> {
                   ],
                 ),
               ),
-              Components.symptomps("Most Searched specialities", 8, false, ""),
+              Components.symptomps(
+                "Most Searched specialities",
+                8,
+                false,
+                "",
+                viewModel.onSpecialitySelect(context),
+              ),
               Container(height: 5),
               Container(
                 width: width,
@@ -105,11 +114,12 @@ class _BookAppointmentViewState extends State<BookAppointmentView> {
                 8,
                 true,
                 "Find top sergeons near you for your sergical procedure",
+                () {},
               ),
               Container(height: 12),
-              Components.symptomps("Most Common Symptoms", 8, false, ""),
+              Components.symptomps("Most Common Symptoms", 8, false, "", () {}),
               Container(height: 12),
-              Components.symptomps("All Specialities", 18, false, ""),
+              Components.symptomps("All Specialities", 18, false, "", () {}),
             ],
           ),
         ),

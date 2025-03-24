@@ -1,3 +1,4 @@
+import 'package:fadfocus_assignment/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTextstyles {
@@ -10,4 +11,10 @@ class AppTextstyles {
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
+  static TextStyle smallTitle = TextStyle(
+    color: AppColors.secondaryColor,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle smallText = TextStyle(fontSize: 12);
+  static TextStyle smallTextBold = TextStyle(fontSize: 12,fontWeight: FontWeight.bold);
 }

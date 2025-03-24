@@ -26,7 +26,11 @@ class _AppointmentViewState extends State<AppointmentView> {
   Widget build(BuildContext context) {
     final appointmentVm = Provider.of<AppointmentViewmodel>(context);
     return Scaffold(
-      appBar: AppBar(title: Text("My Bookings")),
+      appBar: AppBar(
+        title: Text("My Bookings"),
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
         child: Wrap(
